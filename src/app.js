@@ -42,15 +42,17 @@ router.post('/api/post', async(ctx) => {
         console.log('url', url)
         const result = await axios.post(url)
         console.log('result', JSON.stringify(result.data))
-        ctx.body = 'success'
+        ctx.body = result.data
     } catch (error) {
         if (error.response) {
             console.log('status', error.response.status, error.response.data)
             ctx.body = JSON.stringify(error.response.data)
+            ctx.status = HttpStatus.BAD_REQUEST
         } else {
 
             console.log(error)
             ctx.body = JSON.stringify(error)
+            ctx.status = HttpStatus.BAD_REQUEST
         }
     }
 });  
