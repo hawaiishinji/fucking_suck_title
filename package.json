@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=dev nodemon src/app.js",
     "start-prod": "NODE_ENV=prod node src/app.js",
+    "build-frontend": "cd frontend; npm run build; cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

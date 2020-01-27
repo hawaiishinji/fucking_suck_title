@@ -35,16 +35,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>靠北爛標題</h1>
         <p>
-          Input the message and link you want to post
+          請輸入留言以及爛標題的連結
         </p>
-        message:
+        留言:
         <textarea value={message} onChange={handleMessageChange} />
-        link:
+        連結: (必填)
         <textarea value={link} onChange={handleLinkChange} />
 
         <button onClick={handleClick}>
-          submit
+          送出
         </button>
       </header>
     </div>
