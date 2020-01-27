@@ -23,10 +23,17 @@ app.use(serve(__dirname + '/../frontend/build'));
 
 router.post('/api/post', async(ctx) => {     
 
+    if (!ctx.request.headers.origin) {
+        ctx.status = HttpStatus.BAD_REQUEST
+        console.log('no request headers origin')
+        return
+    }
+
     console.log('headers', ctx.request.headers)
     const {message, link} = ctx.request.body
     if (!message && !link) {
 
+        console.log('no message and link')
         ctx.status = HttpStatus.BAD_REQUEST
         return
     }
