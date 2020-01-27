@@ -11,7 +11,7 @@ const queryString = require('query-string')
 
 const router = Router();  
 const pageId = '101873064694928'
-const access_token = 'EAAlNS0rpJJEBAGgZAaemaZAgjw9RqQfwoSmJrFNICJPZBgcsT797HcQ3hIEZBfZADmGkZACZCwQMDn81saZA2VMYJf9WJSvr41LbG31h9DDzxQke69VHmCAZBunBv0L5W9zEGUAYHu9QyBq6uK6UJNYGtuuQxUNo8aIB9spw6GFYZAegZDZD'
+const access_token = 'EAAlNS0rpJJEBAEANdyxXsW1VCPDt3Ed99sRHVyzda2hZBHFZANwVl7yIZAZCsSyPZBy1t8rGZAQEKpEmCsKyb8sLUpLjti6MZCzlLJxRbjlbtHNZCyWLPXZA8p3s3A7c13QPOZAcBcZAyJUTJZBIzQo2w7nO0rF9R4N54HoLFHIo7tRcwQZDZD'
 /** 
 在此可組合各種 Middleware
 **/ 
@@ -23,6 +23,7 @@ app.use(serve(__dirname + '/../frontend/build'));
 
 router.post('/api/post', async(ctx) => {     
 
+    console.log('headers', ctx.request.headers)
     const {message, link} = ctx.request.body
     if (!message && !link) {
 
