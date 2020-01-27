@@ -56,7 +56,8 @@ router.post('/api/post', async(ctx) => {
 });  
 
 app.use(router.routes());  
-const port = process.env.NODE_ENV === 'dev' ? 3001 : 80
+const defaultPort = process.env.NODE_ENV === 'dev' ? 3001 : 80
+const port = process.env.PORT || defaultPort;
 app.listen(port, () => {
     console.log(`server listen on port ${port} NODE_ENV: ${process.env.NODE_ENV}`)
 });
