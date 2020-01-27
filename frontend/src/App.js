@@ -7,6 +7,7 @@ function App() {
 
   const [message, setMessage] = useState('');
   const [link, setLink] = useState('');
+  const [apiResultMessage, setApiResultMessage] = useState('');
 
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
@@ -20,6 +21,10 @@ function App() {
     console.log('click', message, link)
     axios.post('/api/post', {message, link}).then((result) => {
       console.log('result', result.data)
+      setMessage('')
+      setLink('')
+      const linkUrl = `https://www.facebook.com/${result.data.id}`
+      setApiResultMessage((<div>送出成功 <a href={linkUrl}>FB 文章連結</a></div>))
     }).catch((err)=>{
       if (err.response) {
         
@@ -28,6 +33,7 @@ function App() {
 
         console.log('error', err)
       }
+      setApiResultMessage((<div>送出失敗</div>))
     })
 
   }
@@ -47,6 +53,7 @@ function App() {
         <button onClick={handleClick}>
           送出
         </button>
+        {apiResultMessage}
       </header>
     </div>
   );
