@@ -1,0 +1,36 @@
+{
+  "name": "fuck_suck_title",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=dev nodemon src/app.js",
+    "start-prod": "NODE_ENV=prod node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hawaiishinji/fucking_suck_title.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hawaiishinji/fucking_suck_title/issues"
+  },
+  "homepage": "https://github.com/hawaiishinji/fucking_suck_title#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "http-status": "^1.4.2",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cors": "0.0.16",
+    "koa-logger": "^3.2.1",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^8.0.6",
+    "koa-static": "^5.0.0",
+    "query-string": "^6.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
