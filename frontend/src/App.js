@@ -41,6 +41,12 @@ function App() {
   
   const handleClick = () => {
     console.log('click', message, link)
+    if (!link || link === '' || !link.startsWith('http')) {
+
+      setApiResultMessage((<div>沒有填寫連結</div>))
+      return
+    }
+
     axios.post('/api/post', {message, link}).then((result) => {
       console.log('result', result.data)
       setMessage('')
