@@ -94,10 +94,9 @@ function App() {
           <TextField
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             name="link"
-            label="連結"
+            label="連結 (必填)"
             id="link"
             size="small"
             value={link}
